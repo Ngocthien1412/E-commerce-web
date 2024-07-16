@@ -1,6 +1,7 @@
 import type { GlobalConfig } from 'payload/types'
 
 import link from '../fields/link'
+import { text } from 'stream/consumers'
 
 export const Footer: GlobalConfig = {
   slug: 'footer',
@@ -8,6 +9,7 @@ export const Footer: GlobalConfig = {
     read: () => true,
   },
   fields: [
+   
     {
       name: 'navItems',
       type: 'array',

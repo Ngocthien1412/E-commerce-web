@@ -37,7 +37,7 @@ export interface Page {
   title: string
   publishedOn?: string | null
   hero: {
-    type: 'none' | 'highImpact' | 'mediumImpact' | 'lowImpact'
+    type: 'none' | 'highImpact' | 'mediumImpact' | 'lowImpact'| 'customHero'
     richText: {
       [k: string]: unknown
     }[]
@@ -175,7 +175,8 @@ export interface Media {
 }
 export interface Category {
   id: string
-  title?: string | null
+  title: string | null
+  media?: string | Media | null;
   parent?: (string | null) | Category
   breadcrumbs?:
     | {
@@ -192,7 +193,7 @@ export interface Product {
   id: string
   title: string
   publishedOn?: string | null
-  layout: (
+  layout?: (
     | {
         invertBackground?: boolean | null
         richText: {
@@ -494,6 +495,7 @@ export interface Header {
 }
 export interface Footer {
   id: string
+  
   navItems?:
     | {
         link: {

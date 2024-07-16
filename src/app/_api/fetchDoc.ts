@@ -6,6 +6,8 @@ import { PAGE } from '../_graphql/pages'
 import { PRODUCT } from '../_graphql/products'
 import { GRAPHQL_API_URL } from './shared'
 import { payloadToken } from './token'
+import { query } from 'express'
+
 
 const queryMap = {
   pages: {
@@ -20,6 +22,7 @@ const queryMap = {
     query: ORDER,
     key: 'Orders',
   },
+  
 }
 
 export const fetchDoc = async <T>(args: {
